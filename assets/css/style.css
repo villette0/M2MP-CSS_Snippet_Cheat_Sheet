@@ -1,0 +1,121 @@
+:root {
+  --fuschia: #FF66FF;
+}
+
+* {
+  box-sizing: border-box;
+  background-color: #3b3d3f;
+}
+
+::selection {
+  color: black;
+  background: turquoise;
+}
+
+body {
+  font-family: Arial;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 2%;
+}
+
+.main-header {
+  padding: 20px;
+  color: var(--fuschia);
+  text-align: center;
+}
+
+.main-header p {
+  color: white;
+  font-size: 80%;
+}
+
+.code-card {
+  min-height: 50%;
+  display: flex;
+  flex-direction: column;
+  flex: 30%;
+  padding: 10px;
+  margin: 15px;
+  text-align: center;
+  border-style: dashed;
+  border-width: 2px;
+  border-color: white;
+}
+
+.card-header {
+  position: relative;
+  margin-top: -30px;
+  padding: 8px;
+  font-size: 150%;
+  font-weight: bold;
+  color: var(--fuschia);
+  border: solid;
+  border-width: 2px;
+  border-style: solid;
+  border-color: white;
+  border-radius: 6px;
+  text-align: left;
+}
+
+.code-description {
+  color: var(--fuschia);
+  text-align: left;
+  font-size: 80%;
+  line-height: 1.5;
+}
+
+.code-card .card-header {
+  border-radius: 8px;
+  transition: all 0.5s ease-in-out;
+}
+
+/*Tip: Instead of hover--active aka 
+click, or focus are options too.*/
+.code-card:hover,
+.code-card:hover .card-header {
+  box-shadow: inset 0px 0px 8px
+  rgba(232, 102, 236, 1), 0 0 15px
+  rgba(232, 102, 236, 1);
+  }
+
+.linear-gradient-background {
+  display: flex;   
+  flex-grow: 1;
+  color: white;
+  text-align: left;
+  align-items: center;
+  font-family: monospace;
+  line-height: 1.5;
+  border-radius: 6px;
+  background-image: linear-gradient(
+    rgba(232, 102, 236, 0.3) 0%,
+    rgba(232, 102, 236, 0.6) 100%
+  )
+}
+
+footer {
+  color: var(--fuschia);
+  text-align: center;
+  font-size: 130%;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+/*My Q: How to add 3 width rules?
+Is Flex: percent the correct/best method?*/
+@media screen and (min-width: 992px) {
+  .code-card {
+    flex: 30%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .code-card {
+    flex: 100%
+  }
+}
